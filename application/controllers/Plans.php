@@ -42,19 +42,45 @@ class Plans extends CI_Controller {
 		$this->load->model('Plans_M');
 		$this->load->model('Customer_M');
 		$this->Customer_M->temp_data($this->input->get());
-		$plans = $this->Plans_M->single_plan($plan_id);
-		if($plans->plan_price=='Free') {
-		 $plans->plan_price=0;
-		}
-		$this->session->set_userdata(array(
-                            'plan_name'       => $plans->plan_name,
-                            'plan_price'      => $plans->plan_price,
-							'plan_id'          =>$plan_id,
-							'total'				=>$plans->plan_price,
-						     'status'        => TRUE
-                    ));
-				
-		$d['v'] = 'plans';
-		redirect('cart');
+		if(!empty($this->Plans_M->check_user_plan())) {
+		$plans = $this->Plans_M->check_user_plan();
+			if($plans<$plan_id) {
+			$plans = $this->Plans_M->single_plan($plan_id);
+			
+				if($plans->plan_price=='Free') {
+				 $plans->plan_price=0;
+				}
+				$this->session->set_userdata(array(
+									'plan_name'       => $plans->plan_name,
+									'plan_price'      => $plans->plan_price,
+									'plan_id'          =>$plan_id,
+									'total'				=>$plans->plan_price,
+									 'status'        => TRUE
+							));
+						
+				$d['v'] = 'plans';
+				redirect('cart');
+			} else {
+			$this->session->set_flashdata('error','Sorry! You cannot downgrade your plans');	
+			redirect('plans');
+			}
+	} else {
+	$plans = $this->Plans_M->single_plan($plan_id);
+			
+				if($plans->plan_price=='Free') {
+				 $plans->plan_price=0;
+				}
+				$this->session->set_userdata(array(
+									'plan_name'       => $plans->plan_name,
+									'plan_price'      => $plans->plan_price,
+									'plan_id'          =>$plan_id,
+									'total'				=>$plans->plan_price,
+									 'status'        => TRUE
+							));
+						
+				$d['v'] = 'plans';
+				redirect('cart');
 	}
+	}
+	
 }

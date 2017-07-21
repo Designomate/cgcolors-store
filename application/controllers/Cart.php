@@ -26,10 +26,18 @@ class Cart extends CI_Controller {
 		$this->session->unset_userdata('plan_id');
 		 }
 		 
+		  if(!empty($this->session->userdata('plan_id')) && !empty($this->session->userdata('email'))) {
+			  $this->load->model('Plans_M');
+				$plans = $this->Plans_M->check_user_plan();
+					if($plans>$this->session->userdata('plan_id')) {
+						$this->session->set_flashdata('error','Sorry! You cannot downgrade your plans');	
+						redirect('plans');
+				  }
+		  }
 		$d['v'] = 'cart';
 		$this->load->view('template', $d);
 	}
-	
+
 	public function buynow()
 	{
 		$tplan_name = $this->input->get('p');

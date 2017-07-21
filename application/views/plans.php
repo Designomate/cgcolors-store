@@ -8,7 +8,7 @@
 	<h1>Plans you cannot resist yourself 
 from starting eCommerce business</h1>
 </div>
-
+  <em><?php echo $this->session->flashdata("error");?></em>
 <div class="TabsTheme">
  <ul class="nav nav-tabs borderNone">
  <span class="or">OR</span>
