@@ -39,8 +39,7 @@ class Daddons extends CI_Controller {
 	
 	public function buynow()
 	{
-	
-					
+				
 		$theme_id = $this->input->get('p');
 		$this->load->model('Themes_M');
 		$theme = $this->Themes_M->single_plan($theme_id);

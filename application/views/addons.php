@@ -21,7 +21,9 @@
   <?php foreach($list as $addon) { ?> 
     <li><p><img src="<?php echo $addon->addon_image_link;?>" /></p>
 	<h4><?php echo $addon->addon_name;?></h4>
-	<em><?php echo $addon->addon_price;?> </em>
+	
+	<em>Price: $<?php echo $addon->addon_price;?> </em>
+	<em>Integration Charges: $<?php echo $addon->addon_inte_charges;?> </em>
 	<p><?php echo $addon->addon_desc;?></p>
 	<label><input type="checkbox" <?php if(check_cart_addons($addon->id)) {echo "checked";};?> name="addons_items[]" value="<?php echo $addon->id;?>">Add This Feature</label>
 	</li>

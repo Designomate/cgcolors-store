@@ -47,8 +47,8 @@ Your items has been added to your cart  <?php } ?></p></div>
 	  foreach($addons as $addon) { 
 
 	  
-	  if($addon->addon_price!='Free') { 
-	  $price = (float)($addon->addon_price.".00");
+	  if($addon->addon_inte_charges!='Free') { 
+	  $price = (float)($addon->addon_inte_charges.".00");
 
 	  $amt=$amt+$price; }
 	     $mykey = ($keys[$c]);  ?>
@@ -56,7 +56,7 @@ Your items has been added to your cart  <?php } ?></p></div>
 	   <td><a class="delete-addons" data-plan="<?php echo $mykey; ?>" href="#">x</a></td>
 	   <td style="width:15%;"><a href=""><img src="<?php echo $addon->addon_image_link;?>" alt="" /></a></td>
 	   <td style="text-align:left;"><a href="<?php echo base_url();?>themes/addons"> <?php echo $addon->addon_name; ?></a></td>
-	   <td style="width:10%;"><?php if($addon->addon_price=='Free') echo "Free"; else echo "$".$addon->addon_price; ?></td>
+	   <td style="width:10%;"><?php if($addon->addon_inte_charges=='Free') echo "Free"; else echo "$".$addon->addon_inte_charges; ?></td>
 	  </tr>
 	  
 	  <?php $c++; }
