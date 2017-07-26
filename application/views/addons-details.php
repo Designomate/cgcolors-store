@@ -3,7 +3,7 @@
 <form method="post" action="<?php echo base_url();?>themes/add_continue">
 <section class="contentPart">
  <div class="containerFIx-80">
- <a href="<?php echo base_url();?>themes">Back</a>
+ <a href="<?php echo base_url();?>themes/addons">Back</a>
  <input type="submit" name="submit" value="Continue">
    <div class="aMazingStore">
     <em>Welcome</em>
@@ -13,35 +13,17 @@
 </section>
 <section class="designComponent">
   <div class="container">
-   <div class="CenterTXT"><h2>Regular Design Components</h2>
-   <p>Mix and match a variety of Regular Design Components to create a consistent look and feel across your ecommerce website.</p></div>
+ 
+   <div class="CenterTXT">
+   <p><img src="<?php echo $addon_details->addon_image_link;?>" /></p>
+   <h2><?php echo $addon_details->addon_name;?></h2>
+   <p><?php echo $addon_details->addon_desc;?></p>
+    <p><em>Price: $<?php echo $addon_details->addon_price;?> </em></p>
+	 <p><em>Integration Charges: $<?php echo $addon_details->addon_inte_charges;?> </em></p>
+	 <label><input type="checkbox" <?php if(check_cart_addons($addon_details->id)) {echo "checked";};?> name="addons_items[]" value="<?php echo $addon_details->id;?>">Add This Feature</label>
+	 </div>
   </div>
-  <div class="containerFIx-80">
-   <ul>
-  <?php foreach($list as $addon) { ?> 
-    <li><p><img src="<?php echo $addon->addon_image_link;?>" /></p>
-	<h4><?php echo $addon->addon_name;?></h4>
-	
-	<em>Price: $<?php echo $addon->addon_price;?> </em>
-	<em>Integration Charges: $<?php echo $addon->addon_inte_charges;?> </em>
-	<p><?php 
-	$string = strip_tags($addon->addon_desc);
-
-if (strlen($string) > 200) {
-
-    // truncate string
-    $stringCut = substr($string, 0, 500);
-
-    // make sure it ends in a word so assassinate doesn't become ass...
-    $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... <a target="_blank" href="'.base_url().'themes/addon_details/?id='.$addon->id.'">Read More</a>'; 
-}
-echo $string;?></p>
-	<label><input type="checkbox" <?php if(check_cart_addons($addon->id)) {echo "checked";};?> name="addons_items[]" value="<?php echo $addon->id;?>">Add This Feature</label>
-	</li>
-   <?php } ?>
-	
-   </ul>
-  </div>
+  
   <div class="containerFIx-80">
    <div class="CenterTXT CenterTXTBottom m-b-0"><h3>Try 15 days and see which plan is right for you</h3>
    <p>*Pro plan: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> 

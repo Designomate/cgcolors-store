@@ -64,6 +64,17 @@ class Themes extends CI_Controller {
 		$this->load->view('template', $d);
 	}
 	
+	public function addon_details()
+	{    $this->load->model('Addons_M');
+	     $addonid = $this->input->get('id');
+		
+		$d['addon_details']  = $this->Addons_M->single_addon($addonid);
+		$d['v'] = 'addons-details';
+		$this->load->model('Addons_M');
+		$d['list'] = $this->Addons_M->allAddons();
+		$this->load->view('template', $d);
+	}
+	
 	public function add_continue()
 	{
 		$addons_items = $this->input->post('addons_items');
