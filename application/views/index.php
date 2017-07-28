@@ -19,14 +19,13 @@ Stores for Free on BigCommerce</h1>
   <div class="row">
    <div class="col-md-7">
    <div class="innerwidthLess">
-    <div class="curveOne"><h2>Pick Amazing Theme or Request Custom Design</h2></div>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-	when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, </p>
+    <div class="curveOne"><h2>Quick and Simplified Store Design Process</h2></div>
+	<p>Let's face it, building a well designed and well planned e-commerce store is still difficult so we have targeted that pain point and simplified the whole process from picking up the theme to getting your store up and running with all the necessary functionality.</p>
 	</div>
    </div>
    <div class="col-md-5">
     <div class="innerTheme textRight">
-	 <img src="<?php echo base_url();?>assets/images/make-the-payment.png" alt="" />
+	 <img src="<?php echo base_url();?>assets/images/quick-and-simplified-store-design-process.png" alt="" />
 	</div>
    </div>
   </div>
@@ -36,14 +35,13 @@ Stores for Free on BigCommerce</h1>
   <div class="row">
    <div class="col-md-5">
     <div class="innerTheme textLeft">
-	 <img src="<?php echo base_url();?>assets/images/make-the-payment.png" alt="" />
+	 <img src="<?php echo base_url();?>assets/images/e-commerce-store-plans-you-can't-resist.png" alt="" />
 	</div>
    </div>
    <div class="col-md-7">
    <div class="innerwidthLess">
-    <div class="curveTwo"><h2>Select Features you love</h2></div>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-	when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, </p>
+    <div class="curveTwo"><h2>E-Commerce Store Plans You Can't Resist</h2></div>
+	<p>We have designed our plans to ensure that getting an amazing e-commerce store should be in budget for everyone despite the size of their business. Our monthly plans have got everything you need to make your business successful.</p>
 	</div>
    </div>
   
@@ -55,16 +53,33 @@ Stores for Free on BigCommerce</h1>
   <div class="row">
    <div class="col-md-7">
    <div class="innerwidthLess">
-    <div class="curveThree"><h2>Make the Payment</h2></div>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-	when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, </p>
+    <div class="curveThree"><h2>Great Quality Control</h2></div>
+	<p>Quality control is one of the most important thing for us. Building an e-commerce is one thing but a store that has great quality control always performs better than the others. We make sure that your e-commerce store work fine always and have correct information on all the pages and products.</p>
 	</div>
    </div>
    <div class="col-md-5">
     <div class="innerTheme textRight">
-	 <img src="<?php echo base_url();?>assets/images/make-the-payment.png" alt="" />
+	 <img src="<?php echo base_url();?>assets/images/grea-quality-control.png" alt="" />
 	</div>
    </div>
+  </div>
+  </div>
+  
+  
+     <div class="innerdataTheme">
+  <div class="row">
+   <div class="col-md-5">
+    <div class="innerTheme textLeft">
+	 <img src="<?php echo base_url();?>assets/images/24x&-support.png" alt="" />
+	</div>
+   </div>
+   <div class="col-md-7">
+   <div class="innerwidthLess">
+    <div class="curveTwo"><h2>24x& Support</h2></div>
+	<p>We have got you covered. Our Shopify experts are available 24x7 to help you with your store. Have a question regarding store or need some help with the store chat with us or call us and we'll help you right away.</p>
+	</div>
+   </div>
+  
   </div>
   </div>
  
@@ -101,9 +116,19 @@ from starting eCommerce business</h1>
 		 <h3><i>$</i><?php echo $plan->plan_price;?><i class="timeM-Y">/mo</i></h3>
 		 <?php } ?>
 		 <p><?php echo $plan->plan_desc;?></p>
+		 <ul>
+  <li>Lorem</li>
+  <li>Lorem</li>
+  <li class='hiddenClass'>Lorem</li>
+  <li class='hiddenClass'>Lorem</li>
+  <li class='hiddenClass'>Lorem</li>
+  <li class="hiddenClass">Ipsum</li>
+</ul>
 		 <?php if($plan->id==4)  { ?>
 		 <a href="<?php echo base_url();?>custom_design">BUY NOW!</a>
-
+<div class="show-more">
+  <em>Show more</em>
+</div>
 		<?php } else { ?>
 <a href="plans/buynow?p=<?php echo $plan->id;?>&pr=<?php echo $plan->plan_price;?>">BUY NOW!</a>
 		<?php } ?>
@@ -144,46 +169,39 @@ from starting eCommerce business</h1>
 <section class="clientArea">
  <div class="container">
  <h2>Clients Who Love US</h2>
-  <ul>
-   <li>
-    <span class="paragraph-testimonial">
-	 <p>Josh is incredible. Very professional. He takes a project and will think of things that make them so user friendly and very pleasing to look at that you might not even have thought of. He can do anything that another developer can do but he will do it better.</p>
-	</span>
-	<span class="authorPara">
-	 <img src="<?php echo base_url();?>assets/images/user1.jpg" alt="" />
-	 <em>Mary Ann
+      <div id="testimonialCarausel" class="owl-carousel owl-theme">
+      <div class="item"><p>Josh is incredible. Very professional. He takes a project and will think of things that make them so user friendly and very pleasing to look at that you might not even have 
+	  thought of. He can do anything that another developer can do but he will do it better.</p>
+	  <div class="userImageandInfo">
+	  <em>Mary Ann</em>
 	  <i>www.myhouseinthecloud.com</i>
-	 </em>
-	</span>
-   </li>
-   
-   <li>
-   <span class="authorPara">
-	 <img src="<?php echo base_url();?>assets/images/user2.jpg" alt="" />
-	 <em>Leslie Hait
+	 <img src="<?php echo base_url();?>assets/images/user1.jpg" alt="" />
+	  </div>
+	  </div>
+	  
+	  <div class="item"><p>
+Josh, as usual, did a wonderful job on this contract. He was easy to communicate with, prompt and accurate. I have worked with Josh on several jobs and have always found him to be reliable, easy to reach and communicate with, patient, thorough and accurate. I wholeheartedly recommend him, and will hire him for any future work that I need done.
+</p>
+	  <div class="userImageandInfo">
+	  <em>Leslie Hait </em>
 	  <i>www.frescosites.com</i>
-	 </em>
-	</span>
-    <span class="paragraph-testimonial">
-	 <p>Josh, as usual, did a wonderful job on this contract. He was easy to communicate with, prompt and accurate. I have worked with Josh on several jobs and have always found him to be reliable, easy to reach and communicate with, patient, thorough and accurate. I wholeheartedly recommend him, and will hire him for any future work that I need done.</p>
-	</span>	
-   </li>
-   
-   <li>
-    <span class="paragraph-testimonial">
-	 <p>Josh and CG Colors are fast and efficient. They did 3 jobs for me in record time. They always respond to calls and emails immediately and get the
-job done with no hassles and at fair prices. I have recommend CG Colors to other businesses and they all have had a great experience.</p>
-	</span>
-	<span class="authorPara">
-	 <img src="<?php echo base_url();?>assets/images/user4.jpg" alt="" />
-	 <em>MaJoy Romanory Ann
+	 <img src="<?php echo base_url();?>assets/images/user2.jpg" alt="" />
+	  </div>
+	  </div>
+	  
+	  <div class="item"><p>
+Josh and CG Colors are fast and efficient. They did 3 jobs for me in record time. They always respond to calls and emails immediately and get the job done with no hassles and at fair prices. I have recommend CG Colors to other businesses and they all have had a great experience.
+</p>
+	  <div class="userImageandInfo">
+	  <em>MaJoy Romanory Ann </em>
 	  <i>www.brazilbronze.com</i>
-	 </em>
-	</span>
-   </li>
-   
-   
-  </ul>
+	 <img src="<?php echo base_url();?>assets/images/user3.jpg" alt="" />
+	  </div>
+	  </div>
+      
+
+    </div>
+
  </div>
 </section>
 

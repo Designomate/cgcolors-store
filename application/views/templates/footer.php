@@ -48,14 +48,14 @@ We're here available to help via Live Chat</p>
     <div class="innerdataFooter">
 	 <h4>SERVICE PROVIDED</h4>
 	<ul class="menuLinks">
-	    <li><a href="">Home
-	    <li><a href="">About</a></li>
-	    <li><a href="">Features</a></li>
-	    <li><a href="">Pricing</a></li>
-	    <li><a href="">FAQ</a></li>
-		<li><a href="">Support</a></li>
+	    <li><a href="<?php echo base_url();?>">Home </a></li>                   
+	    <li><a href="<?php echo base_url();?>about">About</a></li>                     
+	    <li><a href="<?php echo base_url();?>features">Features</a></li>                    
+	    <li><a href="<?php echo base_url();?>plans">Pricing</a></li>                   
+	    <li><a href="<?php echo base_url();?>faq">FAQ</a></li>                    
+	    <li><a href="<?php echo base_url();?>support">Support</a></li>
 		<li><a href="">Blogs</a></li>
-	    <li><a href="">Contact Us</a></li>
+	    <li><a href="<?php echo base_url();?>contact">Contact Us</a></li>
 		<li><a href="">Go To Store</a></li>
 
 	   </ul>
@@ -111,6 +111,37 @@ We're here available to help via Live Chat</p>
 <script src="<?php echo base_url('assets/js/jquery-1.10.2.js');?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.js');?>"></script>
 <script src="<?php echo base_url('assets/js/jquery.smooth-scroll.js');?>"></script>
+<script src="<?php echo base_url('assets/js/owl.carousel.min.js');?>"></script>
+	<script>
+    $(document).ready(function() {
+      //Sort random function
+      function random(owlSelector){
+        owlSelector.children().sort(function(){
+            return Math.round(Math.random()) - 0.5;
+        }).each(function(){
+          $(this).appendTo(owlSelector);
+        });
+      }
+     
+      $("#testimonialCarausel").owlCarousel({
+        navigation: true,
+		  items : 2,
+          itemsDesktop : [1199,2],
+          itemsDesktopSmall : [979,1],
+        navigationText: [
+          "<i class='icon-chevron-left icon-white'></i>",
+          "<i class='icon-chevron-right icon-white'></i>"
+          ],
+        beforeInit : function(elem){
+          //Parameter elem pointing to $("#owl-demo")
+          random(elem);
+        }
+     
+      });
+     
+    });
+
+	</script>
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "100%";
@@ -125,6 +156,14 @@ function closeNav() {
     element.classList.remove("offAsAdd");
 }
 </script>
+<script>
+$(document).ready(function(){
+    $(".show-more em").click(function(){
+         $('li.hiddenClass').slideToggle();
+    });
+});
+</script>
+
 </body>
 
 </html>
