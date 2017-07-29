@@ -18,13 +18,19 @@ class Login extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	 
+	
 	public function index()
 	{
-       	$d['v'] = 'login';
-		 $this->load->library('user_agent');  // load user agent library
+        if($this->session->userdata('email')) {
+		redirect('dashboard');
+		}
+		
+	   $d['v'] = 'login';
+		$this->load->library('user_agent');  // load user agent library
 
-    //Set session for the referrer url
-    $this->session->set_userdata('referrer_url', $this->agent->referrer() );  
+       //Set session for the referrer url
+       $this->session->set_userdata('referrer_url', $this->agent->referrer() );  
 		$this->load->view('template', $d);
 	}
 	
@@ -45,6 +51,7 @@ class Login extends CI_Controller {
     //Store in a variable so that can unset the session
     $redirect_back = $this->session->userdata('referrer_url');
     $this->session->unset_userdata('referrer_url');
+	
     redirect( $redirect_back );
 }
 
@@ -63,6 +70,116 @@ else {
      }
       
 	}
+	
+	public function forget_password()
+	{
+		$d['v'] = 'forget-password';
+		
+		$this->load->view('template', $d);
+	}
+	
+	public function resetPassword()
+	{
+		$d['v'] = 'forget-password';
+		$this->load->helper('url');
+		$email= $this->input->post('email');
+		$this->load->library('form_validation');
+		
+		$this->form_validation->set_rules('email','email','required|trim|callback_rolekey_exists[' . $email . ']');
+		$this->form_validation->set_message('rolekey_exists', 'Sorry! Email is not exist');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			
+		$d['v'] = 'forget-password';
+		$this->load->view('template', $d);
+	
+		}
+		else
+		{
+			
+			  $temp_pass = md5(uniqid());
+            //send email with #temp_pass as a link
+            $this->load->library('email', array('mailtype'=>'html'));
+            $this->email->from('user@yahoo.com', "Site");
+            $this->email->to($this->input->post('email'));
+            $this->email->subject("Reset your Password");
+
+            $message = "<p>This email has been sent as a request to reset our password</p>";
+            $message .= "<p><a href='".base_url()."login/reset_password/$temp_pass'>Click here </a>if you want to reset your password,
+                        if not, then ignore</p>";
+            $this->email->message($message);
+
+            if(!$this->email->send()){
+                $this->load->model('Customer_M');
+                if($this->Customer_M->temp_reset_password($temp_pass)){
+                   $this->session->set_flashdata('success', 'Please check your email');
+				   $d['v'] = 'forget-password';
+				   $this->load->view('template', $d);
+                }
+            }
+            else{
+				 $this->session->set_flashdata('error', 'Email was not sent, please contact your administrator');
+				 $d['v'] = 'forget-password';
+				 $this->load->view('template', $d);
+            }
+		
+		}
+	
+	}
+	
+	public function reset_password($temp_pass){
+		 if($this->session->userdata('email')) {
+		redirect('dashboard');
+		}
+    $this->load->model('Customer_M');
+    if($this->Customer_M->is_temp_pass_valid($temp_pass)){
+		$d['v'] = 'reset-password';
+		$d['temp_pass'] = $temp_pass;
+		$this->load->view('template', $d);
+
+    }else{
+		  $this->session->set_flashdata('error', 'the key is not valid');
+		   $d['v'] = 'forget-password';
+		   $this->load->view('template', $d);
+    }
+
+}
+   public function update_password($temp_pass){
+	    if($this->session->userdata('email')) {
+		redirect('dashboard');
+		}
+    $this->load->library('form_validation');
+	$this->form_validation->set_rules('password', 'Password', 'required|trim');
+	$this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|trim|matches[password]');
+		if($this->form_validation->run()){
+		  $this->load->model('Customer_M');
+		  $this->Customer_M->reset_password($temp_pass);
+		  $this->session->set_flashdata('success', 'Your Password is changed, Login Now');
+	 	 redirect('login');
+		}
+	 else{
+			$this->session->set_flashdata('error', 'Password is not matched');
+			$d['v'] = 'reset-password';
+				$d['temp_pass'] = $temp_pass;
+		  $this->load->view('template', $d);
+
+		 }
+  }
+
+		function rolekey_exists($key) {
+			$this->load->model('Customer_M');
+				$this->Customer_M->mail_exists($key);
+				if ($this->Customer_M->mail_exists($key))
+                {
+                        return TRUE;   
+                }
+                else
+                { 
+			 $this->form_validation->set_message('error', 'Incorrect Email');
+                      return False;   
+                }
+}
 	
 	public function logout()
 	{

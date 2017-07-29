@@ -7,13 +7,14 @@
    <p>Log in  your Account!</p>
    <div class="v_errors">
    <?php echo validation_errors(); ?>
-  <?php echo $this->session->flashdata('login_error');?></div>
-   <form method="post" action="<?php echo base_url();?>login/auth" class="registerPage">
+  <?php echo $this->session->flashdata('success');?>
+  <?php echo $this->session->flashdata('error');?>
+  </div>
+   <form method="post" action="<?php echo base_url();?>login/resetPassword " class="registerPage">
     <label><input type="email" name="email" placeholder="Email" /></label>
-	<label><input type="text" name="password" placeholder="Password" /></label>
-	<a href="<?php echo base_url();?>login/forget_password">Forget Password?</a>
+	<a href="<?php echo base_url();?>login">Login</a>
 	<a href="<?php echo base_url();?>register">New User?</a>
-	 <input type="submit" name="submit" value="Log In" />
+	 <input type="submit" name="submit" value="Submit" />
    </form>
    <div class="row rememberCl">
     <div class="col-md-6 col-sm-6 col-xs-12"><label><input type="checkbox" />Remember me</label></div>

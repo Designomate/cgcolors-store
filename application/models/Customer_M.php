@@ -58,8 +58,45 @@ Class Customer_M extends CI_Model {
 
 	}
 	
+	public function temp_reset_password($temp_pass){
+    $data =array('reset_pass'=>$temp_pass);
+                $email = $this->input->post('email');
+
+    if($data){
+        $this->db->where('email', $email);
+        $this->db->update('dg_users', $data);  
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+
 	
-	function mail_exists($key)
+}
+public function reset_password($temp_pass){
+    $data =array('password'=>$this->input->post('password'),'reset_pass'=>'');
+             
+    if($data){
+        $this->db->where('reset_pass', $temp_pass);
+        $this->db->update('dg_users', $data);  
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+
+	
+}
+
+public function is_temp_pass_valid($temp_pass){
+    $this->db->where('reset_pass', $temp_pass);
+    $query = $this->db->get('dg_users');
+    if($query->num_rows() == 1){
+        return TRUE;
+    }
+    else return FALSE;
+}
+
+
+	public function mail_exists($key)
 {
     $this->db->where('email',$key);
     $query = $this->db->get('dg_users');
