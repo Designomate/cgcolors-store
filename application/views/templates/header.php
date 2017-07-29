@@ -3,11 +3,19 @@
 <head>
 <title>eCommerce Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="<?php echo base_url('assets/css/owl.carousel.css');?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/css/owl.theme.css');?>" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css');?>" type="text/css" />
 <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css');?>" type="text/css" />
  <link rel="icon" href="<?php echo base_url('assets/images/cgcolors.png');?>" type="image/gif" sizes="16x16"> 
- <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,700i,900" rel="stylesheet"> 
+ <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,700i,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Heebo:900" rel="stylesheet">  
+
 </head>
+<?php $directoryURI = $_SERVER['REQUEST_URI'];
+ $path = parse_url($directoryURI, PHP_URL_PATH);
+$components = explode('/', $path);
+ $currentPage = $components[2]; ?> 
 <body>
 
 <header>
@@ -37,19 +45,19 @@
  </div>
 </div>
 <div class="innerITMenu">
- <div class="containerFIx-80">
+ <div class="container">
    <div class="row">
     <div class="col-md-9 col-sm-6 col-xs-2">
 	 <nav>  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="navigation">
   <ul>
-   <li><a href="<?php echo base_url();?>">Home </a></li>                   
-   <li><a href="<?php echo base_url();?>about">About</a></li>                     
-   <li><a href="<?php echo base_url();?>features">Features</a></li>                    
-   <li><a href="<?php echo base_url();?>plans">Pricing</a></li>                   
-   <li><a href="<?php echo base_url();?>faq">FAQ</a></li>                    
-   <li><a href="<?php echo base_url();?>support">Support</a></li>
+   <li class="<?php if($currentPage =='index'){echo 'activeClass';}?>"><a href="<?php echo base_url();?>">Home </a></li>                   
+   <li class="<?php if($currentPage =='about'){echo 'activeClass';}?>"><a href="<?php echo base_url();?>about">About</a></li>                     
+   <li class="<?php if($currentPage =='features'){echo 'activeClass';}?>"><a href="<?php echo base_url();?>features">Features</a></li>                    
+   <li class="<?php if($currentPage =='plans'){echo 'activeClass';}?>"><a href="<?php echo base_url();?>plans">Pricing</a></li>                   
+   <li class="<?php if($currentPage =='faq'){echo 'activeClass';}?>"><a href="<?php echo base_url();?>faq">FAQ</a></li>                    
+   <li class="<?php if($currentPage =='support'){echo 'activeClass';}?>"><a href="<?php echo base_url();?>support">Support</a></li>
   </ul>
  </div>
 </div></nav>
