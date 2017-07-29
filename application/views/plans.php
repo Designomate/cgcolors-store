@@ -27,12 +27,10 @@ from starting eCommerce business</h1>
 		 <h3><?php echo $plan->plan_price;?></h3>
 		 <?php  } elseif(!empty($plan->plan_price)) { ?>
 		 <h3><i>$</i><?php echo $plan->plan_price;?><i class="timeM-Y">/mo</i></h3>
-		 <?php } ?>
-		 
-		 <p><?php echo $plan->plan_desc;?></p>
+		 <?php } ?>		 
+		 <?php echo $plan->plan_desc;?>
 		  <?php if($plan->id==4)  { ?>
 		 <a href="<?php echo base_url();?>custom_design">BUY NOW!</a>
-
 		<?php } else { ?>
 <a href="plans/buynow?p=<?php echo $plan->id;?>&pr=<?php echo $plan->plan_price;?>">BUY NOW!</a>
 		<?php } ?>
@@ -50,10 +48,9 @@ from starting eCommerce business</h1>
 	    <div class="planTable">
 		 <em><?php echo $plan->plan_name;?> </em>
 		 <h3><i>$</i><?php echo $plan->plan_price;?><i class="timeM-Y">/yearly</i></h3>
-		 <p><?php echo $plan->plan_desc;?></p>
+		 <?php echo $plan->plan_desc;?>
 		  <?php if($plan->id==4)  { ?>
 		 <a href="<?php echo base_url();?>custom_design">BUY NOW!</a>
-
 		<?php } else { ?>
 <a href="plans/buynow?p=<?php echo $plan->id;?>&pr=<?php echo $plan->plan_price;?>">BUY NOW!</a>	
 		<?php } ?>
