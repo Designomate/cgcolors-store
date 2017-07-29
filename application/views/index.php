@@ -75,7 +75,7 @@ Stores for Free on BigCommerce</h1>
    </div>
    <div class="col-md-7">
    <div class="innerwidthLess">
-    <div class="curveTwo"><h2>24x& Support</h2></div>
+    <div class="curveFour"><h2>24x& Support</h2></div>
 	<p>We have got you covered. Our Shopify experts are available 24x7 to help you with your store. Have a question regarding store or need some help with the store chat with us or call us and we'll help you right away.</p>
 	</div>
    </div>

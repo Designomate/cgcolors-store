@@ -112,6 +112,22 @@ We're here available to help via Live Chat</p>
 <script src="<?php echo base_url('assets/js/bootstrap.js');?>"></script>
 <script src="<?php echo base_url('assets/js/jquery.smooth-scroll.js');?>"></script>
 <script src="<?php echo base_url('assets/js/owl.carousel.min.js');?>"></script>
+<script>
+$(document).on("ready", function() {
+  $('ul.inFoBasedContent li:not(.always)').hide();
+});
+$(document).on("click", ".show-more em", function(e) {
+		e.preventDefault();		
+    if($(this).text() == "Show more"){
+        $(this).text("Show less");
+        $(this).parent().prev().prev().find('li.textNone').show(400);
+    } else {
+        $(this).text("Show more");
+        $(this).parent().prev().prev().find('li:not(.always)').hide(400);
+    };
+    $this.text(linkText);
+});
+</script>
 	<script>
     $(document).ready(function() {
       //Sort random function
@@ -156,13 +172,7 @@ function closeNav() {
     element.classList.remove("offAsAdd");
 }
 </script>
-<script>
-$(document).ready(function(){
-    $(".show-more em").click(function(){
-         $('li.hiddenClass').slideToggle();
-    });
-});
-</script>
+
 
 </body>
 

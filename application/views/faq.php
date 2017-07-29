@@ -8,7 +8,7 @@
   <section class="faqListing">
   <div class="containerFIx-80">
    <div class="col-md-6"><ul><h3>Lorem Ipsum</h3>
-<li><a href="">What is the difference between theme based design and custom design?</a></li>
+<li><a href="faq-details">What is the difference between theme based design and custom design?</a></li>
 <li><a href="">Why monthly plans?</a></li>
 <li><a href="">Can I buy store design service not the whole monthly package?</a></li>
 <li><a href="">How to add more apps after you handover the store?</a></li>

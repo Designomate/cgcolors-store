@@ -25,4 +25,27 @@ class Pages extends CI_Controller {
 		
 		$this->load->view('template', $d);
 	}
+	
+	public function contact()
+	{
+		
+       	$d['v'] = 'contact';
+		
+		$this->load->view('template', $d);
+	}
+	
+	public function answer()
+	{
+		
+       	$d['v'] = 'faq-details';
+		
+		$this->load->view('template', $d);
+	}
+	public function works()
+	{
+		
+       	$d['v'] = 'how-it-works';
+		
+		$this->load->view('template', $d);
+	}
 }

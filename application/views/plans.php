@@ -36,6 +36,7 @@ from starting eCommerce business</h1>
 		<?php } else { ?>
 <a href="plans/buynow?p=<?php echo $plan->id;?>&pr=<?php echo $plan->plan_price;?>">BUY NOW!</a>
 		<?php } ?>
+		<div class="show-more"><em>Show more</em></div>
 		</div>
 	   </div>
 	  <?php } ?>

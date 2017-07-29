@@ -1,4 +1,3 @@
-<?php include('header.php'); ?>
 <div class="topSpacingHeight"></div>
 <div class="BottomTopSpacing" id="contact" style="margin-bottom:0;">
 <section class="contentPart m-top-0">
@@ -64,4 +63,3 @@ you choose and we talk.</h1>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3028.5595261974486!2d-73.73176688462067!3d40.61754097934221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c265ea2d2079dd%3A0x827b61226a326207!2s335+Central+Ave%2C+Lawrence%2C+NY+11559%2C+USA!5e0!3m2!1sen!2sin!4v1496150324877" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
  </div>
-<?php include('footer.php'); ?>
