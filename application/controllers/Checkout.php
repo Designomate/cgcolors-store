@@ -162,6 +162,7 @@ class Checkout extends CI_Controller {
 	$addons_id=$this->session->userdata('addons_id');
 	}
 	$data = array(
+	'user_id' => $this->session->userdata('user_id'),
 	'first_name' => $this->input->post('first_name'),
 	'last_name' => $this->input->post('last_name'),
 	'city' => $this->input->post('city'),
