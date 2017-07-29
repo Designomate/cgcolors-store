@@ -97,20 +97,31 @@ else {
 		}
 		else
 		{
+						$this->load->library('email');
+
+			$config['protocol'] = 'sendmail';
+			$config['mailpath'] = '/usr/sbin/sendmail';
+			$config['charset'] = 'iso-8859-1';
+			$config['wordwrap'] = TRUE;
+			$config['mailtype'] = 'html';
+
+
+			$this->email->initialize($config);
+
 			
 			  $temp_pass = md5(uniqid());
             //send email with #temp_pass as a link
-            $this->load->library('email', array('mailtype'=>'html'));
-            $this->email->from('user@yahoo.com', "Site");
+           // $this->load->library('email', array('mailtype'=>'html'));
+            $this->email->from('designomate@careermarshalletters.com', "designomate");
             $this->email->to($this->input->post('email'));
             $this->email->subject("Reset your Password");
 
-            $message = "<p>This email has been sent as a request to reset our password</p>";
+            $message = "This email has been sent as a request to reset our password";
             $message .= "<p><a href='".base_url()."login/reset_password/$temp_pass'>Click here </a>if you want to reset your password,
                         if not, then ignore</p>";
             $this->email->message($message);
 
-            if(!$this->email->send()){
+            if($this->email->send()){
                 $this->load->model('Customer_M');
                 if($this->Customer_M->temp_reset_password($temp_pass)){
                    $this->session->set_flashdata('success', 'Please check your email');
