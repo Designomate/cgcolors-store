@@ -23,7 +23,7 @@
  <section class="trending">
   <div class="containerFIx-80">
   <div class="trendRelative">
-  <h3>Trending this week</h3><a href="" class="absoluteLinkK">See more</a>
+  <h3>Trending this week</h3><!--<a href="" class="absoluteLinkK">See more</a>-->
    <div class="row">
    <?php foreach($list as $theme) { ?>
     <div class="col-md-3 col-sm-6">
@@ -50,42 +50,18 @@
 
 </div> <!-- /#myModal --></div></div>
    <?php } ?>
-	<div class="col-md-3 col-sm-6">
-	 <div class="trendPortfolio">
-	  <div class="trendNew"><img src="<?php echo base_url();?>assets/images/templet-3.png" /><div class="hoverBlockDiv"><a href="" class="left"><i class="fa fa-eye"></i> Preview</a><a href="themes/buynow?p=Boundless&pr=200" class="right"><i class="fa fa-shopping-cart "></i> Buy Now</a></div></div>
-	  <div class="portfolioInfo">
-	   <h5>Boundless: <span>$60</span></h5>
-	   <span>2 Styles</span>
-	  </div>
-	 </div>
-	</div>
 	
-	<div class="col-md-3 col-sm-6">
-	 <div class="trendPortfolio">
-	  <div class="trendNew"><img src="<?php echo base_url();?>assets/images/templet-4.png" /><div class="hoverBlockDiv"><a href="" class="left"><i class="fa fa-eye"></i> Preview</a><a href="themes/buynow?p=Boundless&pr=200" class="right"><i class="fa fa-shopping-cart "></i> Buy Now</a></div></div>
-	  <div class="portfolioInfo">
-	   <h5>Boundless: <span>$190</span></h5>
-	   <span>2 Styles</span>
-	  </div>
-	 </div>
-	</div>
 	
-	<div class="col-md-3 col-sm-6">
-	 <div class="trendPortfolio">
-	  <div class="trendNew"><img src="<?php echo base_url();?>assets/images/templet-5.png" /><div class="hoverBlockDiv"><a href="" class="left"><i class="fa fa-eye"></i> Preview</a><a href="themes/buynow?p=Boundless&pr=200" class="right"><i class="fa fa-shopping-cart "></i> Buy Now</a></div></div>
-	  <div class="portfolioInfo">
-	   <h5>Boundless: <span>$80</span></h5>
-	   <span>2 Styles</span>
-	  </div>
-	 </div>
-	</div>
+
 	
    </div> 
+   
+   <?php echo ($links); ?>
   </div>
   </div>
  </section>
  
- <section class="trending">
+ <!--<section class="trending">
   <div class="containerFIx-80">
   <div class="trendRelative">
   <h3>Minimalist style</h3><a href="" class="absoluteLinkK">See more</a>
@@ -177,7 +153,7 @@
    </div> 
   </div>
   </div>
- </section>
+ </section>-->
  
   <section class="customDesign">
   <div class="containerFIx-80">

@@ -20,6 +20,23 @@ Class Themes_M extends CI_Model {
 
 	}
 	
+	 public function record_count() {
+        return $this->db->count_all($this->table);
+    }
+
+    public function fetch_allThemes($limit, $start) {
+        $this->db->limit($limit, $start);
+        $query = $this->db->get($this->table);
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+   }
+   
 	public function themes_list() {
 
 	$this->db->select('*');
