@@ -48,4 +48,103 @@ class Pages extends CI_Controller {
 		
 		$this->load->view('template', $d);
 	}
+	public function faq1()
+	{
+		
+       	$d['v'] = 'faq1';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq2()
+	{
+		
+       	$d['v'] = 'faq2';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq3()
+	{
+		
+       	$d['v'] = 'faq3';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq4()
+	{
+		
+       	$d['v'] = 'faq4';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq5()
+	{
+		
+       	$d['v'] = 'faq5';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq6()
+	{
+		
+       	$d['v'] = 'faq6';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq7()
+	{
+		
+       	$d['v'] = 'faq7';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq8()
+	{
+		
+       	$d['v'] = 'faq8';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq9()
+	{
+		
+       	$d['v'] = 'faq9';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq10()
+	{
+		
+       	$d['v'] = 'faq10';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq11()
+	{
+		
+       	$d['v'] = 'faq11';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq12()
+	{
+		
+       	$d['v'] = 'faq12';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq13()
+	{
+		
+       	$d['v'] = 'faq13';
+		
+		$this->load->view('template', $d);
+	}
+	public function faq14()
+	{
+		
+       	$d['v'] = 'faq14';
+		
+		$this->load->view('template', $d);
+	}
+	
 }

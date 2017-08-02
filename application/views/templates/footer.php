@@ -35,12 +35,7 @@ We're here available to help via Live Chat</p>
     <div class="innerdataFooter">
 	 <h4>aBOUT COMPANY</h4>
 	 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-	<ul class="socialMediaIcons">
-	    <li class="facebook"><a href="#"></a></li>
-		<li class="twitter"><a href="#"></a></li>
-		<li class="google"><a href="#"></a></li>
-		<li class="linkedin"><a href="#"></a></li>
-	   </ul>
+
 	</div>
    </div>
    
@@ -64,13 +59,13 @@ We're here available to help via Live Chat</p>
    
    <div class="col-md-4">
     <div class="innerdataFooter">
-	 <h4>GET FREE QUOTE</h4>
-	 <form>
-	  <label><input type="text" class="name" name="" value="" placeholder="Name" /></label>
-	  <label><input type="text" class="email" name="" value="" placeholder="Email" /></label>
-	  <label><input type="text" class="web" name="" value="" placeholder="Website url" /></label>
-	  <label><input type="submit" name="" value="GET QUOTE" /></label>
-	 </form>
+	 <h4>Follow us</h4>
+	 <ul class="socialMediaIcons footerSocialTop">
+	    <li class="facebook"><a href="#"></a></li>
+		<li class="twitter"><a href="#"></a></li>
+		<li class="google"><a href="#"></a></li>
+		<li class="linkedin"><a href="#"></a></li>
+	   </ul>
 	</div>
    </div>
   </div>
@@ -141,7 +136,7 @@ $(document).on("click", ".show-more em", function(e) {
      
       $("#testimonialCarausel").owlCarousel({
         navigation: true,
-		  items : 2,
+		  items : 3,
           itemsDesktop : [1199,2],
           itemsDesktopSmall : [979,1],
         navigationText: [

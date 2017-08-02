@@ -68,23 +68,24 @@ ul.socialMediaIcons li.facebook{background:url(../images/nav-bar-social-icon.png
 ul.socialMediaIcons li.twitter{background:url(../images/nav-bar-social-icon.png) -40px top no-repeat; }
 ul.socialMediaIcons li.google{background:url(../images/nav-bar-social-icon.png) -80px top no-repeat; }
 ul.socialMediaIcons li.linkedin{background:url(../images/nav-bar-social-icon.png) -120px top no-repeat; }
-.innerdataFooter ul.socialMediaIcons li.facebook{background:url(../images/nav-bar-social-icon.png) left -39px no-repeat; }
-.innerdataFooter ul.socialMediaIcons li.twitter{background:url(../images/nav-bar-social-icon.png) -40px -39px no-repeat; }
-.innerdataFooter ul.socialMediaIcons li.google{background:url(../images/nav-bar-social-icon.png) -80px -39px no-repeat; }
-.innerdataFooter ul.socialMediaIcons li.linkedin{background:url(../images/nav-bar-social-icon.png) -120px -39px no-repeat; }
+.innerdataFooter ul.socialMediaIcons li{ height:52px; width:52px; padding:0;}
+.innerdataFooter ul.socialMediaIcons li.facebook{background:url(../images/social-media-footer.png) left top no-repeat; }
+.innerdataFooter ul.socialMediaIcons li.twitter{background:url(../images/social-media-footer.png) -57px top no-repeat; }
+.innerdataFooter ul.socialMediaIcons li.google{background:url(../images/social-media-footer.png) -113px top no-repeat; }
+.innerdataFooter ul.socialMediaIcons li.linkedin{background:url(../images/social-media-footer.png) -169px top no-repeat; }
 section.contentPart{margin-top:140px;}
 .aMazingStore em{color: #f7333b;display: block;float: left;font-size: 29px;font-style: normal;line-height: normal;margin:0; width: 100%;}
 .aMazingStore h1{font-size:60px; margin-top:0; font-weight:bold; padding-bottom:20px; position:relative; }
 .aMazingStore h1:before{content: ""; position:absolute; bottom:0; height:3px; background:#f7333b; display:block; width:220px;}
 .pickTheme{border-bottom:1px solid #e6e6e6; padding-bottom:90px; margin-bottom:90px;}
-.pickTheme h2{font-size:50px; color:#353535; display:inline-block; }
+.pickTheme h2{font-size:60px; color:#353535; display:inline-block; }
 .pickTheme h2 em{background:#f7333b; color:#fff; width:40px; height:40px; border-radius:100%; border:2px solid #fdc1c4; text-align:center; display:inline-block; margin-right:20px;}
-.curveOne h2{background:url("../images/one.png") no-repeat left top; padding-left:70px; min-height:45px;}
-.curveTwo h2{background:url("../images/two.png") no-repeat left top; padding-left:70px; min-height:45px;}
-.curveThree h2{background:url("../images/three.png") no-repeat left top; padding-left:70px; min-height:45px;}
-.curveFour h2{background:url("../images/four.png") no-repeat left top; padding-left:70px; min-height:45px;}
+.curveOne h2{background:url("../images/one.png") no-repeat left top; padding-left:100px; min-height:45px;}
+.curveTwo h2{background:url("../images/two.png") no-repeat left top; padding-left:100px; min-height:45px;}
+.curveThree h2{background:url("../images/three.png") no-repeat left top; padding-left:100px; min-height:45px;}
+.curveFour h2{background:url("../images/four.png") no-repeat left top; padding-left:100px; min-height:45px;}
 .innerdataTheme a.taRgetLink{background:#f7333b; width:250px; height:70px; margin-bottom:40px; color:#fff; display:block; font-size:22px; text-align:center; padding:17px 0; border-radius:8px;}
-.innerdataTheme p{margin:45px 0 40px 0;}
+.innerdataTheme p{margin:45px 0 40px 103px;}
 .innerdataTheme{margin:90px 0 0 0;}
 img{max-width:100%;}
 .innerdataTheme .textLeft{text-align:left;}
@@ -165,7 +166,7 @@ section.title h1{font-size:31px; color:#171717; position:relative;}
 section.title h1:before{content: ""; position:absolute; bottom:-10px; height:2px; background:#f7333b; display:block; left:50%; width:50px; margin-left:-25px;}
 section.title p{font-size:16px; margin-top:20px;}
 .faqListing ul{list-style:none; padding:0; margin:10px 0 30px 0; float:left; width:100%;}
-.faqListing ul li{padding:12px 0; display:block; font-size:22px; line-height:normal;}
+.faqListing ul li{padding:12px 0; display:block; font-size:22px; margin-bottom:35px; line-height:normal;}
 .faqListing ul h3{font-size:25px; color:#000000; margin-bottom:30px;}
 .faqListing ul li a{color:#f7333b;}
 .BottomTopSpacing{margin-bottom:70px; float:left; width:100%;}
@@ -387,9 +388,10 @@ textarea:focus, textarea:active, input:focus, input:active{border-color:#f7333b 
 .inFoBasedContent li{font-size: 18px; color:#656565;}
 .howitsworkmainClass{background:#f7f7f7; padding:30px 0; margin:10px 0 0 0;}
 .howitsworkmainClass .innerdataTheme{margin:0;}
-.howitsworkmainClass h2{font-size:51px; padding-left:60px;}
-.howitsworkmainClass .innerdataTheme p{margin:22px 0; padding-left:60px; font-size:21px;}
-
+.howitsworkmainClass h2{font-size:54px; padding-bottom:20px;padding-left:90px; position:relative;}
+.howitsworkmainClass .curveOne h2:before{position:absolute; left:23px; width:16px; top:67px; height:1800px; display:block; background:url(../images/curveArrow.png) repeat-y left top; content:"";}
+.howitsworkmainClass .innerdataTheme p{margin:22px 0; padding-left:92px; font-size:21px;}
+.footerSocialTop{margin-top:30px;}
 @media screen and (min-width:768px) and (max-width:3000px){
 }
 @media screen and (min-width:1024px){
@@ -421,6 +423,7 @@ textarea:focus, textarea:active, input:focus, input:active{border-color:#f7333b 
 .loginForm input[type="submit"]{margin:20px 0 10px 0;}
 .innerBG{min-height:auto;}
 section.bglogin{min-height:auto;}
+.howitsworkmainClass .curveOne h2:before{background:none;}
 }
 @media screen and (max-width:479px){
 .callicon span{font-size:28px;}
@@ -483,7 +486,7 @@ section.contentPart{margin-top:70px;}
 .userImageandInfo em{font-size:17px;}
 .userImageandInfo i{font-size:13px;}
 #testimonialCarausel .item{margin:0 2px;}
-
+.howitsworkmainClass .curveOne h2:before{height:2900px;}
 
 }
 @media screen and (min-width:480px) and (max-width:767px){
@@ -506,8 +509,12 @@ header{position:inherit;}
 
 }
 @media screen and (min-width:1360px){
-.innerwidthLess{padding-right:10%;}
+.innerwidthLess{padding-right:1%;}
 .aMazingStore h1{padding-right:20%;}
+}
+@media screen and (min-width:1200px){
+	#testimonialCarausel .item p{padding-bottom:135px;}
+	#testimonialCarausel .item{min-height:447px;}
 }
 @media screen and (max-width:1359px){
 section.bannerPart{height:768px;}	

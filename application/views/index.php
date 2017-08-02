@@ -40,7 +40,7 @@ Stores for Free on BigCommerce</h1>
    </div>
    <div class="col-md-7">
    <div class="innerwidthLess">
-    <div class="curveTwo"><h2>E-Commerce Store Plans You Can't Resist</h2></div>
+    <div class="curveTwo"><h2>e-Commerce Store Plans You Can't Resist</h2></div>
 	<p>We have designed our plans to ensure that getting an amazing e-commerce store should be in budget for everyone despite the size of their business. Our monthly plans have got everything you need to make your business successful.</p>
 	</div>
    </div>
@@ -115,23 +115,14 @@ from starting eCommerce business</h1>
 		 <?php  } elseif(!empty($plan->plan_price)) { ?>
 		 <h3><i>$</i><?php echo $plan->plan_price;?><i class="timeM-Y">/mo</i></h3>
 		 <?php } ?>
-		 <p><?php echo $plan->plan_desc;?></p>
-		 <ul>
-  <li>Lorem</li>
-  <li>Lorem</li>
-  <li class='hiddenClass'>Lorem</li>
-  <li class='hiddenClass'>Lorem</li>
-  <li class='hiddenClass'>Lorem</li>
-  <li class="hiddenClass">Ipsum</li>
-</ul>
+		<?php echo $plan->plan_desc;?>
 		 <?php if($plan->id==4)  { ?>
-		 <a href="<?php echo base_url();?>custom_design">BUY NOW!</a>
-<div class="show-more">
-  <em>Show more</em>
-</div>
+		 <a href="<?php //echo base_url();?>custom_design">BUY NOW!</a>
+
 		<?php } else { ?>
 <a href="plans/buynow?p=<?php echo $plan->id;?>&pr=<?php echo $plan->plan_price;?>">BUY NOW!</a>
 		<?php } ?>
+		<div class="show-more"><em>Show more</em></div>
 		</div>
 	   </div>
 	  <?php } ?>
@@ -145,7 +136,7 @@ from starting eCommerce business</h1>
 	    <div class="planTable">
 		 <em><?php echo $plan->plan_name;?> </em>
 		 <h3><i>$</i><?php echo $plan->plan_price;?><i class="timeM-Y">/yearly</i></h3>
-		 <p><?php echo $plan->plan_desc;?></p>
+		 <?php echo $plan->plan_desc;?>
 		 <?php if($plan->id==4)  { ?>
 		 <a href="<?php echo base_url();?>custom_design">BUY NOW!</a>
 
