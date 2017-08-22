@@ -8,7 +8,30 @@
         <!-- /footer content -->
       </div>
     </div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
+<script>
+jQuery(document).ready(function() {
+	var base_url ="<?php echo base_url();?>";
+	 $(".notiftn").click(function()
+    {      
+alert("ssss");	
+     $.ajax({
+         type: "POST",
+         url: base_url + "messages/read_msg", 
+         data: {textbox: $("#textbox").val()},
+         dataType: "text",  
+         cache:false,
+         success: 
+              function(data){
+                alert(data);  //as a debugging message.
+              }
+          });// you have missed this bracket
+     return false;
+ });
+ 
+});
+</script>
     <!-- jQuery -->
     <script src="<?php echo base_url();?>/backassets/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

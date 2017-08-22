@@ -29,4 +29,47 @@ function check_cart_addons($addons_id) {
 	return false;
   }
 }
+
+function get_notifications($email) {
+ 	$ci=& get_instance();
+        $ci->load->database(); 
+        $ci->db->select('*');
+		$ci->db->where('user',$email);
+		$ci->db->where('status',0);
+		$ci->db->order_by('date','desc');
+		$query = $ci->db->get('users_notifications');
+		$msgs = ($query->result());
+		return $msgs;
+}
+
+
+function time_elapsed_string($datetime, $full = false) {
+	date_default_timezone_set("Asia/Kolkata");
+  $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
 }
