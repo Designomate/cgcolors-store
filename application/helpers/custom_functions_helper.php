@@ -31,15 +31,40 @@ function check_cart_addons($addons_id) {
 }
 
 function get_notifications($email) {
- 	$ci=& get_instance();
-        $ci->load->database(); 
-        $ci->db->select('*');
-		$ci->db->where('user',$email);
-		$ci->db->where('status',0);
-		$ci->db->order_by('date','desc');
-		$query = $ci->db->get('users_notifications');
-		$msgs = ($query->result());
-		return $msgs;
+	$ci=& get_instance();
+	$ci->load->database(); 
+	$ci->db->select('*');
+	$ci->db->where('user',$email);
+	$ci->db->where('status',0);
+	$ci->db->order_by('date','desc');
+	$query = $ci->db->get('users_notifications');
+	$msgs = ($query->result());
+	return $msgs;
+}
+
+function get_readnotifications($email) {
+	$ci=& get_instance();
+	$ci->load->database(); 
+	$ci->db->select('*');
+	$ci->db->where('user',$email);
+	$ci->db->where('status',1);
+	$ci->db->order_by('date','desc');
+	$query = $ci->db->get('users_notifications');
+	$msgs = ($query->result());
+	return $msgs;
+}
+
+function get_notifications_by_id($id) {
+	$ci=& get_instance();
+	$ci->load->database(); 
+	$ci->db->select('*');
+	$ci->db->where('id',$id);
+	$ci->db->order_by('date','desc');
+	$query = $ci->db->get('users_notifications');
+	$msgs = ($query->row());
+	$ci->db->where('id',$id);
+	$ci->db->update('users_notifications',array('status'=>1));  
+	return $msgs;
 }
 
 

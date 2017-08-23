@@ -20,6 +20,9 @@
 
     <!-- Custom Theme Style -->
     <link href="<?php echo base_url();?>backassets/build/css/custom.min.css" rel="stylesheet">
+	<style>
+	.mail_list.open {background: rgba(204, 204, 204, 0.29);}
+	</style>
   </head>
 
   <body class="nav-md">
@@ -73,6 +76,11 @@
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url();?>themes/addons">Add New</a></li>
                       <li><a href="<?php echo base_url();?>daddons/addons_list">Addons List</a></li>
+                    </ul>
+                  </li>
+				   <li><a><i class="fa fa-clone"></i>Alerts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url();?>notifications">Alerts</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -138,13 +146,13 @@
 					<?php	foreach($msgs as $msg) { ?>
 						
                     <li>
-                      <a class="notiftn" data-attr="<?php echo $msg->id;?>">
+                      <a href="<?php echo site_url();?>/notifications/?msg=<?php echo $msg->id; ?>">
                         <span>
                           <span>Designomate</span>
                           <span class="time"> <?php echo time_elapsed_string($msg->date); ?></span>
                         </span>
                         <span class="message">
-                          <?php echo $msg->message;?>
+                         <?php echo word_limiter($msg->message, 10);?>
                         </span>
                       </a>
                     </li>
